@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hestia — Partenaires Professionnels & Airbnb</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#fdfaf5;--paper:#fefcf8;--paper-warm:#f5efe5;
+  --ink:#3a2f24;--ink-2:#5a4d3f;--ink-3:#7a6a5a;
+  --brass:#b8946a;--brass-deep:#8a6a48;--brass-light:#d8c4a3;--brass-bg:#f0e3cf;
+  --line:#e8ddc8;--green:#8ba07d;--green-bg:#e8edda;--green-deep:#5e7351;
+  --promo:#c4543a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family:'DM Sans',sans-serif;color:var(--ink);
+  background:var(--ivory);font-size:13px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+.page{
+  width:210mm;min-height:297mm;
+  margin:0 auto;background:var(--paper);
+  display:grid;grid-template-rows:auto 1fr auto;
+  position:relative;overflow:hidden;
+}
+/* Bande laterale gauche couleur différente pour distinguer du B2C */
+.page::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;
+  width:6px;background:linear-gradient(180deg,var(--ink) 0%,var(--brass-deep) 100%);
+}
+
+/* HEADER */
+.hd{
+  padding:24px 36px 20px 44px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  background:var(--paper);
+}
+.hd-left{display:flex;align-items:baseline;gap:10px}
+.hd-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;font-weight:600;color:var(--brass-deep);
+  letter-spacing:.16em;line-height:1;
+}
+.hd-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  letter-spacing:.22em;text-transform:uppercase;
+}
+.hd-right{text-align:right}
+.hd-badge{
+  display:inline-block;background:var(--ink);color:var(--ivory);
+  font-size:9px;text-transform:uppercase;letter-spacing:.25em;
+  padding:5px 12px;border-radius:20px;font-weight:600;margin-bottom:5px;
+}
+.hd-target{font-size:10px;color:var(--ink-3);line-height:1.6}
+.hd-target strong{color:var(--brass-deep)}
+
+/* BODY */
+.body{padding:22px 36px 16px 44px;display:flex;flex-direction:column;gap:18px}
+
+/* Hero */
+.hero{
+  background:linear-gradient(135deg,var(--ink) 0%,#2e2318 100%);
+  color:var(--ivory);padding:22px 26px;border-radius:12px;
+  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
+}
+.hero-q{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:500;font-style:italic;
+  line-height:1.3;letter-spacing:-.01em;
+}
+.hero-q em{color:var(--brass-light);font-weight:600}
+.hero-stats{display:flex;flex-direction:column;gap:8px;flex-shrink:0}
+.hero-stat{
+  background:rgba(184,148,106,.18);border:1px solid rgba(184,148,106,.35);
+  padding:8px 14px;border-radius:7px;text-align:center;
+}
+.hero-stat-v{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-style:italic;color:var(--brass-light);
+  font-weight:700;line-height:1;
+}
+.hero-stat-l{font-size:8.5px;text-transform:uppercase;letter-spacing:.2em;color:rgba(253,250,245,.55);font-weight:600;margin-top:2px}
+
+/* Ce qu'on gère */
+.segments{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px}
+.segment{background:var(--paper-warm);padding:14px;border-radius:10px;border:1px solid var(--line)}
+.segment-i{font-size:20px;margin-bottom:7px}
+.segment-t{
+  font-family:'Cormorant Garamond',serif;
+  font-size:14px;font-style:italic;font-weight:600;
+  color:var(--brass-deep);margin-bottom:4px;
+}
+.segment-d{font-size:11px;color:var(--ink-3);line-height:1.5}
+
+/* Ce qu'on inclut vs situation actuelle */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vs-col{padding:16px;border-radius:10px}
+.vs-col.actuel{background:#faf6f0;border:1px solid var(--line)}
+.vs-col.hestia{background:var(--brass-bg);border:1.5px solid var(--brass-deep)}
+.vs-t{
+  font-family:'Cormorant Garamond',serif;
+  font-size:14px;font-style:italic;font-weight:600;
+  margin-bottom:10px;
+}
+.vs-col.actuel .vs-t{color:var(--ink-3)}
+.vs-col.hestia .vs-t{color:var(--brass-deep)}
+.vs-list{list-style:none;margin:0;padding:0;font-size:11px}
+.vs-list li{padding:4px 0;display:flex;gap:7px;align-items:flex-start;color:var(--ink-2);line-height:1.45}
+.vs-list li::before{flex-shrink:0;margin-top:1px}
+.vs-col.actuel .vs-list li::before{content:'·';color:var(--ink-3)}
+.vs-col.hestia .vs-list li::before{content:'✓';color:var(--green-deep);font-weight:bold}
+
+/* Tarification */
+.pricing-t{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;font-weight:600;color:var(--brass-deep);
+  letter-spacing:-.01em;margin-bottom:10px;
+}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px}
+.price-card{
+  background:var(--paper);border:1px solid var(--line);
+  padding:14px 12px;border-radius:10px;text-align:center;
+}
+.price-card.best{background:var(--brass-bg);border-color:var(--brass-deep)}
+.pc-l{font-size:9px;text-transform:uppercase;letter-spacing:.25em;color:var(--ink-3);font-weight:600;margin-bottom:8px}
+.pc-v{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-style:italic;color:var(--brass-deep);
+  font-weight:700;line-height:1;
+}
+.pc-d{font-size:10px;color:var(--ink-3);margin-top:5px;line-height:1.4}
+.pc-tag{
+  display:inline-block;margin-top:6px;
+  font-size:8px;text-transform:uppercase;letter-spacing:.15em;
+  background:var(--green-deep);color:#fff;
+  padding:2px 6px;border-radius:4px;font-weight:600;
+}
+
+/* Garantie qualité */
+.garantie{
+  background:var(--green-bg);border:1px solid var(--green);
+  padding:14px 18px;border-radius:10px;
+  display:flex;gap:14px;align-items:flex-start;
+}
+.garantie-ic{font-size:22px;flex-shrink:0;margin-top:1px}
+.garantie-c{flex:1}
+.garantie-t{
+  font-family:'Cormorant Garamond',serif;
+  font-size:14px;font-style:italic;font-weight:600;
+  color:var(--green-deep);margin-bottom:4px;
+}
+.garantie-d{font-size:11.5px;color:var(--ink-2);line-height:1.55}
+.garantie-items{
+  display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;
+}
+.garantie-item{
+  font-size:10px;background:var(--paper);
+  padding:3px 9px;border-radius:20px;border:1px solid var(--green);
+  color:var(--green-deep);font-weight:500;
+}
+
+/* Conditions B2B */
+.conds{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.cond{
+  background:var(--paper-warm);padding:11px 12px;border-radius:8px;
+  border:1px solid var(--line);font-size:11px;color:var(--ink-2);line-height:1.5;
+}
+.cond strong{
+  display:block;font-family:'Cormorant Garamond',serif;
+  font-size:12.5px;font-style:italic;color:var(--brass-deep);
+  font-weight:600;margin-bottom:3px;
+}
+
+/* FOOTER */
+.ft{
+  padding:16px 36px 20px 44px;
+  border-top:2px solid var(--brass);
+  background:var(--paper-warm);
+  display:grid;grid-template-columns:1fr auto;
+  gap:20px;align-items:center;
+}
+.ft-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;font-style:italic;font-weight:600;
+  color:var(--brass-deep);letter-spacing:.05em;margin-bottom:3px;
+}
+.ft-info{font-size:10px;color:var(--ink-3);line-height:1.7}
+.ft-cta{text-align:right}
+.ft-cta-l{
+  font-size:9px;text-transform:uppercase;letter-spacing:.28em;
+  color:var(--ink-3);font-weight:600;margin-bottom:5px;
+}
+.ft-cta-v{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-style:italic;font-weight:700;
+  color:var(--brass-deep);line-height:1;
+}
+.ft-cta-email{font-size:10.5px;color:var(--ink-3);margin-top:3px;font-style:italic}
+
+@page{size:A4;margin:0}
+@media print{
+  html,body{height:auto}
+  body{background:#fff}
+  .page{width:210mm;min-height:297mm;height:297mm;margin:0;box-shadow:none;page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="hd">
+    <div class="hd-left">
+      <div class="hd-logo">ΕΣΤΙΑ</div>
+      <div class="hd-sub">hestia</div>
+    </div>
+    <div class="hd-right">
+      <div class="hd-badge">Partenaires Professionnels</div>
+      <div class="hd-target">
+        <strong>Hôtes Airbnb · Conciergeries · Sociétés · Syndics</strong><br>
+        Prestataire entretien déclaré SAP · Assurance RC pro · Facturation pro
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-q">
+        Votre prestataire <em>entretien de confiance</em>.<br>
+        Un résultat <em>5 étoiles</em> garanti à chaque turnover.
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-v">4 300€</div>
+          <div class="hero-stat-l">coût d'une<br>mauvaise note</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-v">−30%</div>
+          <div class="hero-stat-l">réservations perdues<br>après 1 avis négatif</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Segments -->
+    <div class="segments">
+      <div class="segment">
+        <div class="segment-i">🏠</div>
+        <div class="segment-t">Hôtes Airbnb</div>
+        <div class="segment-d">Ménage turnover complet entre chaque guest. Linge, cuisine, terrasse, compte-rendu photo inclus.</div>
+      </div>
+      <div class="segment">
+        <div class="segment-i">🏨</div>
+        <div class="segment-t">Conciergeries</div>
+        <div class="segment-d">Devenez notre partenaire entretien sur plusieurs logements. Tarifs volume, créneaux prioritaires.</div>
+      </div>
+      <div class="segment">
+        <div class="segment-i">🏢</div>
+        <div class="segment-t">Sociétés & Syndics</div>
+        <div class="segment-d">Entretien de locaux professionnels, halls communs, espaces de réception. Facturation pro déductible.</div>
+      </div>
+    </div>
+
+    <!-- Comparaison -->
+    <div class="vs">
+      <div class="vs-col actuel">
+        <div class="vs-t">Prestataire classique</div>
+        <ul class="vs-list">
+          <li>Durée insuffisante pour la surface réelle</li>
+          <li>Cuisine et extérieurs souvent négligés</li>
+          <li>Pas de compte-rendu photo systématique</li>
+          <li>Statut déclaratif incertain</li>
+          <li>Aucune facture pro déductible</li>
+          <li>Pas d'assurance RC professionnelle</li>
+          <li>Risque note Airbnb "propreté" à terme</li>
+        </ul>
+      </div>
+      <div class="vs-col hestia">
+        <div class="vs-t">Hestia — Prestataire pro</div>
+        <ul class="vs-list">
+          <li>Temps calibré à la surface réelle</li>
+          <li>Cuisine, terrasse, linge — tout inclus</li>
+          <li>Photos avant/après à chaque passage</li>
+          <li>Activité SAP officielle déclarée NOVA</li>
+          <li>Facture pro déductible de vos charges</li>
+          <li>Assurance RC professionnelle complète</li>
+          <li>Note 5 étoiles propreté quasi-garantie</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tarification B2B -->
+    <div>
+      <div class="pricing-t">Tarification professionnelle</div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="pc-l">Ponctuel</div>
+          <div class="pc-v">Sur devis</div>
+          <div class="pc-d">Selon surface, étages, options et zone géographique</div>
+        </div>
+        <div class="price-card best">
+          <div class="pc-l">Abonnement récurrent</div>
+          <div class="pc-v">−50% vs ponctuel</div>
+          <div class="pc-d">Plafond mensuel fixe. Suspension libre. Sans engagement</div>
+          <span class="pc-tag">⭐ Recommandé</span>
+        </div>
+        <div class="price-card">
+          <div class="pc-l">Partenariat volume</div>
+          <div class="pc-v">Conditions dédiées</div>
+          <div class="pc-d">Multi-logements effectifs. Tarifs négociés sur le réel.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Garantie -->
+    <div class="garantie">
+      <div class="garantie-ic">🛡️</div>
+      <div class="garantie-c">
+        <div class="garantie-t">Notre garantie pour les professionnels</div>
+        <div class="garantie-d">Satisfaction garantie ou intervention corrective gratuite sous 48h. Facture déductible à chaque passage. Assurance RC pro couvrant l'ensemble de nos interventions.</div>
+        <div class="garantie-items">
+          <span class="garantie-item">Facture pro à chaque passage</span>
+          <span class="garantie-item">Compte-rendu photo</span>
+          <span class="garantie-item">RC Pro incluse</span>
+          <span class="garantie-item">Déclaration SAP officielle</span>
+          <span class="garantie-item">Confidentialité absolue</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conditions -->
+    <div class="conds">
+      <div class="cond"><strong>Flexibilité</strong>Suspension avec 7 jours de préavis. Résiliation sans pénalité à 15 jours. Aucun engagement minimal.</div>
+      <div class="cond"><strong>Paiement</strong>Facturation mensuelle. Virement, SEPA ou carte bancaire. Délai 15 jours.</div>
+      <div class="cond"><strong>Couverture</strong>Rayon 30 km autour d'Othis : 77, 60, 93, 94, 92, 95. Paris intra-muros sur demande.</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="ft">
+    <div>
+      <div class="ft-brand">Hestia · Partenaires Professionnels</div>
+      <div class="ft-info">
+        Maison de services à la personne · Othis (77280) · Île-de-France<br>
+        SIRET : En cours d'immatriculation · Agrément SAP : En cours de déclaration<br>
+        Assurance RC professionnelle · TVA non applicable, art. 293 B du CGI
+      </div>
+    </div>
+    <div class="ft-cta">
+      <div class="ft-cta-l">Demande de partenariat</div>
+      <div class="ft-cta-v">06 28 53 06 34</div>
+      <div class="ft-cta-email">harmonie.services@gmail.com</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
